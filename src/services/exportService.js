@@ -19,7 +19,7 @@ exports.rincianPelaporan = async (filters) => {
         SELECT p.no_tiket, p.created_at, p.finish_at, p.kategori, p.status,p.priority, p.maxday, p.judul, p.perihal,k.nama_klien AS nama,p.handle_by, p.handle_by2, p.handle_by3, p.rating
         FROM pelaporan p
         LEFT JOIN klien k ON p.klien_id = k.id_klien
-        WHERE (? IS NULL OR p.created_at BETWEEN ? AND ?)
+        WHERE (? IS NULL OR DATE(p.created_at) BETWEEN ? AND ?)
             AND (? IS NULL OR p.klien_id = ?) 
             AND (? IS NULL OR p.handle_by LIKE CONCAT('%', ?, '%')
                 OR p.handle_by2 LIKE CONCAT('%', ?, '%')

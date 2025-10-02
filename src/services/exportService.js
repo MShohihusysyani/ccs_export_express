@@ -62,7 +62,7 @@ exports.rincianPelaporanExcelHelpdesk = async (filters, userId) => {
         INNER JOIN forward_helpdesk f 
                 ON f.pelaporan_id = p.id_pelaporan 
                 AND f.user_id = ?
-        WHERE (? IS NULL OR p.created_at BETWEEN ? AND ?)
+        WHERE (? IS NULL OR DATE(p.created_at) BETWEEN ? AND ?)
             AND (? IS NULL OR p.klien_id = ?)
             AND (? IS NULL OR p.status = ?)
             AND (? IS NULL OR p.rating = ?)
@@ -103,7 +103,7 @@ exports.rincianPelaporanExcelImplementator = async (filters, userId) => {
         INNER JOIN forward_implementator f 
                 ON f.pelaporan_id = p.id_pelaporan 
                 AND f.user_id = ?
-        WHERE (? IS NULL OR p.created_at BETWEEN ? AND ?)
+        WHERE (? IS NULL OR DATE(p.created_at) BETWEEN ? AND ?)
             AND (? IS NULL OR p.klien_id = ?)
             AND (? IS NULL OR p.status = ?)
             AND (? IS NULL OR p.rating = ?)

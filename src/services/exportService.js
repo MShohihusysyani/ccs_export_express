@@ -49,7 +49,7 @@ exports.rincianPelaporan = async (filters) => {
     const tanggalAwal  = nullIfEmpty(filters.tanggal_awal);
     const tanggalAkhir = nullIfEmpty(filters.tanggal_akhir);
     const namaKlien    = nullIfEmpty(filters.nama_klien);
-    const namaUser     = nullIfEmpty(filters.nama_user);
+    const namaUser     = nullIfEmpty(filters.petugas);
     const ratingVal    = nullIfEmpty(filters.rating);
     const statusCCS    = nullIfEmpty(filters.status);
     

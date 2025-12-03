@@ -48,7 +48,7 @@ exports.rincianPelaporan = async (filters) => {
 
     const tanggalAwal  = nullIfEmpty(filters.tanggal_awal);
     const tanggalAkhir = nullIfEmpty(filters.tanggal_akhir);
-    const namaKlien    = nullIfEmpty(filters.nama_klien);
+    const namaKlien    = nullIfEmpty(filters.klien);
     const namaUser     = nullIfEmpty(filters.petugas);
     const ratingVal    = nullIfEmpty(filters.rating);
     const statusCCS    = nullIfEmpty(filters.status);
@@ -108,7 +108,7 @@ exports.rincianPelaporanExcelHelpdesk = async (filters, userId) => {
 
     const tanggalAwal  = nullIfEmpty(filters.tanggal_awal);
     const tanggalAkhir = nullIfEmpty(filters.tanggal_akhir);
-    const namaKlien    = nullIfEmpty(filters.nama_klien);
+    const namaKlien    = nullIfEmpty(filters.klien);
     const ratingVal    = nullIfEmpty(filters.rating);
     const statusCCS    = nullIfEmpty(filters.status);
 
@@ -149,7 +149,7 @@ exports.rincianPelaporanExcelImplementator = async (filters, userId) => {
 
     const tanggalAwal  = nullIfEmpty(filters.tanggal_awal);
     const tanggalAkhir = nullIfEmpty(filters.tanggal_akhir);
-    const namaKlien    = nullIfEmpty(filters.nama_klien);
+    const namaKlien    = nullIfEmpty(filters.klien);
     const ratingVal    = nullIfEmpty(filters.rating);
     const statusCCS    = nullIfEmpty(filters.status);
 

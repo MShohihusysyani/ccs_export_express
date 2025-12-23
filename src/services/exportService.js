@@ -52,6 +52,7 @@ exports.rincianPelaporan = async (filters) => {
     const namaUser     = nullIfEmpty(filters.petugas);
     const ratingVal    = nullIfEmpty(filters.rating);
     const statusCCS    = nullIfEmpty(filters.status);
+    const prioritas    = nullIfEmpty(filters.prioritas);
     
     // Mendapatkan jenis input tanggal
     const dateTypeInput = filters.filter_date_type; 
@@ -83,6 +84,7 @@ exports.rincianPelaporan = async (filters) => {
                 OR p.handle_by3 LIKE CONCAT('%', ?, '%'))
             AND (? IS NULL OR p.status = ?)
             AND (? IS NULL OR p.rating = ?)
+            AND (? IS NULL OR p.priority = ?)
         ORDER BY p.${targetColumn} DESC
         `,
         [
@@ -94,7 +96,8 @@ exports.rincianPelaporan = async (filters) => {
             namaKlien, namaKlien,
             namaUser, namaUser, namaUser, namaUser,
             statusCCS, statusCCS,
-            ratingVal, ratingVal
+            ratingVal, ratingVal,
+            prioritas, prioritas
         ]
     );
     conn.release();
